@@ -1,6 +1,8 @@
 # flutter_template
 
-A new Flutter project.
+A new Flutter project template. Start your Flutter project with this template featuring a beautiful preview.
+
+![](https://i.imgur.com/UF5msgi.png)
 
 ## Getting Started
 
