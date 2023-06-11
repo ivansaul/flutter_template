@@ -6,13 +6,13 @@ This template utilizes the `device_preview` package for Flutter to streamline th
 
 The `device_preview` package offers a convenient way to preview and emulate the appearance of your application in real-time on various devices and orientations. You can adjust screen sizes, change orientations, and simulate device events to test and optimize the user interface of your application.
 
-[![Made-with-flutter](https://img.shields.io/badge/Made%20with-Flutter-1f425f.svg)](https://flutter.dev/) 
+[![Made-with-flutter](https://img.shields.io/badge/Made%20with-Flutter-orange)](https://flutter.dev/) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ivansaul/flutter_template)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Don't forget to ⭐ the repo
-![GitHub stars](https://img.shields.io/github/stars/ivansaul/codigo_facilito_downloader.svg?style=social&label=Star)
-![GitHub forks](https://img.shields.io/github/forks/ivansaul/codigo_facilito_downloader.svg?style=social&label=Forks) 
+![GitHub stars](https://img.shields.io/github/stars/ivansaul/codigo_facilito_downloader?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ivansaul/codigo_facilito_downloader?style=social) 
 
 ## Features
 
