@@ -1,19 +1,17 @@
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:device_preview_screenshot/device_preview_screenshot.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/foundation.dart';
+import 'package:device_preview_screenshot/device_preview_screenshot.dart';
 
-import 'config/router/app_router.dart';
-import 'config/theme/app_theme.dart';
+import 'presentation/screens/screens.dart';
 
 void main() {
+  const String directory = '/home/saul/Pictures/';
+
   if (Platform.isAndroid || Platform.isIOS) {
-    runApp(
-      const ProviderScope(child: MyApp()),
-    );
+    runApp(const MyApp());
   }
 
   // with extra config for device preview
@@ -23,10 +21,10 @@ void main() {
       tools: [
         ...DevicePreview.defaultTools,
         DevicePreviewScreenshot(
-          onScreenshot: screenshotAsFiles(Directory('/home/saul/Pictures/')),
+          onScreenshot: screenshotAsFiles(Directory(directory)),
         ),
       ],
-      builder: (context) => const ProviderScope(child: MyAppPreview()),
+      builder: (context) => const MyAppPreview(),
     ),
   );
 }
@@ -36,11 +34,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: appRouter,
-      theme: AppTheme().getTheme(),
+    return MaterialApp(
       title: 'Material App',
+      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true),
     );
   }
 }
@@ -50,15 +48,16 @@ class MyAppPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      scrollBehavior:
-          const MaterialScrollBehavior().copyWith(dragDevices: {PointerDeviceKind.mouse}),
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      debugShowCheckedModeBanner: false,
-      routerConfig: appRouter,
+    return MaterialApp(
       title: 'Material App',
-      theme: AppTheme().getTheme(),
+      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true),
+      builder: DevicePreview.appBuilder,
+      locale: DevicePreview.locale(context),
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {PointerDeviceKind.mouse},
+      ),
     );
   }
 }
