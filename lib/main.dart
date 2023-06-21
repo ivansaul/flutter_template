@@ -4,9 +4,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:device_preview_screenshot/device_preview_screenshot.dart';
+import 'package:flutter_template/ui/screens/home_screen.dart';
 
-import 'config/theme/app_theme.dart';
-import 'config/router/app_router.dart';
+import 'config/app_theme.dart';
 
 void main() {
   const String directory = '/home/saul/Pictures/';
@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       title: 'Material App',
-      routerConfig: appRouter,
+      home: const HomeScreen(),
       theme: AppTheme().getTheme(),
       debugShowCheckedModeBanner: false,
     );
@@ -50,9 +50,9 @@ class MyAppPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       title: 'Material App',
-      routerConfig: appRouter,
+      home: const HomeScreen(),
       theme: AppTheme().getTheme(),
       debugShowCheckedModeBanner: false,
       builder: DevicePreview.appBuilder,
