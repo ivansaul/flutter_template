@@ -10,6 +10,7 @@ import 'config/router/app_router.dart';
 import 'config/theme/app_theme.dart';
 
 void main() {
+  const String directory = '/home/saul/Pictures/';
   if (Platform.isAndroid || Platform.isIOS) {
     runApp(
       const ProviderScope(child: MyApp()),
@@ -23,7 +24,7 @@ void main() {
       tools: [
         ...DevicePreview.defaultTools,
         DevicePreviewScreenshot(
-          onScreenshot: screenshotAsFiles(Directory('/home/saul/Pictures/')),
+          onScreenshot: screenshotAsFiles(Directory(directory)),
         ),
       ],
       builder: (context) => const ProviderScope(child: MyAppPreview()),
